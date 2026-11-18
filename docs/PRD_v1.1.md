@@ -78,7 +78,9 @@ Kết quả kiểm tra trên 3 shape:
 - [ ] Cỡ mẫu v1 chỉ có 14 item nên khoảng tin cậy bootstrap rộng, chủ yếu phát hiện hồi quy rõ rệt.
 - [ ] Judge calibration mới chạy trên bộ CSV công khai, chưa có tập held-out mới để kiểm chứng lại sau khi chỉnh rubric.
 - [ ] `ReplyAmountCorrect` mới phủ các mẫu câu khẳng định hoàn tiền bằng VND thường gặp; cần mở rộng test khi thay đổi mẫu trả lời.
-- [ ] Chưa có đánh giá chi phí/latency thật (hiện dùng đơn giá mô phỏng) và chưa bật các kiểm tra nâng cao M5–M7 (slice gate, `pass^k`, `integrity_check`).
+- [ ] Chưa có đánh giá chi phí/latency thật (hiện dùng đơn giá mô phỏng).
+
+Đánh giá v2 đã bổ sung slice gate, `pass@k`/`pass^k`, integrity và ratchet; xem [eval card v2](eval_card.md#v2--advanced--expert-m5m7) để đối chiếu ngưỡng A/A, mutation score và bằng chứng trap.
 
 ## 7. Khi nào lên v1.2
 
