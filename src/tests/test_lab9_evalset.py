@@ -37,6 +37,7 @@ def test_build_writes_items_and_labels_without_checking_tags(tmp_path, evalset_c
     assert item["claim_id"] == "C-001"
     assert "expected" not in item
     assert labels == {"C-001": {"refund_vnd": 35000}}
+    assert b"\r\n" not in (tmp_path / "data/eval/eval_set_v1.jsonl").read_bytes()
 
 
 def test_explicit_check_runs_after_build(tmp_path, evalset_cli):

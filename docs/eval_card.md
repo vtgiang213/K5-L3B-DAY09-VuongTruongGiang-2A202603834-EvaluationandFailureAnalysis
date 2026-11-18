@@ -3,11 +3,11 @@
 Card này tóm tắt cấu hình đánh giá, kết quả gate v1 và giới hạn của bản chạy Core (M1–M4).
 
 - **Run ID / eval set SHA:**
-  - Baseline (`swarm`): [E-swarm-20261118-384c](../src/reports/baseline_v1.json)
-  - PR đối chứng (`fixed`): [E-fixed-20261118-384c](../src/reports/eval_fixed.json)
-  - PR hồi quy (`seeded_regression`): [E-seeded_regression-20261118-384c](../src/reports/eval_seeded_regression.json)
-  - Eval set SHA: `384c03908a66` (cả 3 report đều đủ 70 row, `evaluator_failures = []`)
-- **Phiên bản:** nhánh `starter/d09` (sau commit nền `e1c0ead`) · eval set `v1` (`384c03908a66`) · `metric_spec` `1.1` · seeds `11/22/33/44/55`
+  - Baseline (`swarm`): [E-swarm-20261118-7b0d](../src/reports/baseline_v1.json)
+  - PR đối chứng (`fixed`): [E-fixed-20261118-7b0d](../src/reports/eval_fixed.json)
+  - PR hồi quy (`seeded_regression`): [E-seeded_regression-20261118-7b0d](../src/reports/eval_seeded_regression.json)
+  - Eval set SHA: `7b0d385f822e` (cả 3 report đều đủ 70 row, `evaluator_failures = []`)
+- **Phiên bản:** nhánh `starter/d09` (sau commit nền `e1c0ead`) · eval set `v1` (`7b0d385f822e`) · `metric_spec` `1.1` · seeds `11/22/33/44/55`
 - **Eval set:** v1, 14 item × 5 seed = 70 trial, nguồn `lab8_public`, nhãn tách riêng tại `src/data/eval/labels_v1.json`, kiểm tra `python -m lab9.evalset --check` đạt `0 problem(s)`.
 
 ## Metric & ngưỡng (`src/config/metric_spec.yaml` v1.1)

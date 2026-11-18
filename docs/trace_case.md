@@ -12,7 +12,7 @@ python -m pytest -q -m student -o addopts= tests/test_lab9_trace_case.py
 
 | Trường | Nội dung |
 |---|---|
-| Trial | `seeded_regression C-002@11` (item `E-002`, report `E-seeded_regression-20261118-384c`, trace `R-seeded_regression-C-002-s11`) |
+| Trial | `seeded_regression C-002@11` (item `E-002`, report `E-seeded_regression-20261118-7b0d`, trace `R-seeded_regression-C-002-s11`) |
 | Triệu chứng | `TrialPass`, `RefundAmountCorrect`, `DbFactKept` đều `False` (Lab 8 báo `status resolved != denied`). Ledger ghi hoàn `20.000đ` và reply cũng báo `20.000đ`, trong khi nhãn chuẩn là `denied`, `0đ`. |
 | Bước sai đầu tiên | Event 3 (`model_override`): `{"delay_days": 5}` — agent lấy số ngày trễ trong ticket ghi đè dữ liệu DB (`delay_days=2`). |
 | Vì sao là bước *đầu tiên* | Event 1 (`handoff`) giữ đúng claim `C-002` và quyền `owner_order_only`; event 2 (`investigator`) truy vấn DB trả đúng `delay_days=2`. Sai lệch chỉ bắt đầu ở event 3, kéo theo quote `20.000đ` ở event 4 và khoản hoàn sai ở cuối. |

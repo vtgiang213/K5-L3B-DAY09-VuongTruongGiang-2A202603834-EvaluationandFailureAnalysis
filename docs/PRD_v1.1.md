@@ -1,16 +1,16 @@
 # PRD v1.1 — LogiX-VN refund agent (bổ sung phần đánh giá)
 
 > Bản v1.1 giữ nguyên tính năng của Lab 8 (v1.0), bổ sung định nghĩa "chạy đúng" có thể đo được, bộ failure taxonomy, kiểm định judge và cổng chặn release bằng CI gate. Toàn bộ số liệu bên dưới trích từ các report chạy bằng `lab9.eval`:
-> - Baseline (`swarm`): [E-swarm-20261118-384c](../src/reports/baseline_v1.json)
-> - Đối chứng (`fixed`): [E-fixed-20261118-384c](../src/reports/eval_fixed.json)
-> - Hồi quy (`seeded_regression`): [E-seeded_regression-20261118-384c](../src/reports/eval_seeded_regression.json)
+> - Baseline (`swarm`): [E-swarm-20261118-7b0d](../src/reports/baseline_v1.json)
+> - Đối chứng (`fixed`): [E-fixed-20261118-7b0d](../src/reports/eval_fixed.json)
+> - Hồi quy (`seeded_regression`): [E-seeded_regression-20261118-7b0d](../src/reports/eval_seeded_regression.json)
 
 ## 1. Thay đổi so với v1.0
 
 | Mục | v1.0 | v1.1 |
 |---|---|---|
 | Tiêu chí thành công | "Agent xử lý đúng yêu cầu hoàn tiền" | 8 metric đo tự động trong `src/config/metric_spec.yaml` (v1.1) kèm ngưỡng chặn (mục 3) |
-| Bằng chứng | Chạy thử / demo thủ công | Report JSON có `run_id` + `eval_set_sha` (`384c03908a66`) và CI gate `eval-gate` |
+| Bằng chứng | Chạy thử / demo thủ công | Report JSON có `run_id` + `eval_set_sha` (`7b0d385f822e`) và CI gate `eval-gate` |
 | Rủi ro | Liệt kê chung | Taxonomy 8 lỗi cụ thể (`FM-01`–`FM-08`) gắn trực tiếp với code grader (mục 4) |
 
 ## 2. Phạm vi pilot
@@ -21,7 +21,7 @@
 
 ## 3. Định nghĩa "chạy đúng"
 
-Baseline tham chiếu: `E-swarm-20261118-384c` (eval set SHA `384c03908a66`, spec `1.1`):
+Baseline tham chiếu: `E-swarm-20261118-7b0d` (eval set SHA `7b0d385f822e`, spec `1.1`):
 
 | Metric | Loại | Ngưỡng | Chặn release? | Baseline (`swarm`) | `fixed` | `seeded_regression` |
 |---|---|---|---|---:|---:|---:|
