@@ -49,3 +49,22 @@ def test_paired_bootstrap_reference(stats):
 
 def test_paired_bootstrap_identical_is_zero(stats):
     assert stats.paired_bootstrap([1, 0, 1], [1, 0, 1]) == (0.0, 0.0, 0.0)
+
+
+def test_paired_bootstrap_preserves_pairing(stats):
+    # Independent resampling would produce a wide CI; paired differences are all 1.
+    assert stats.paired_bootstrap([1, 101, 201], [0, 100, 200]) == (1.0, 1.0, 1.0)
+
+
+@pytest.mark.parametrize("a,b", [([], []), ([1, 0], [1]), ([float("nan"), 1], [0, 0]),
+                                 ([1, float("inf")], [0, 0]), ([1], [0])])
+def test_paired_bootstrap_rejects_invalid_samples(stats, a, b):
+    with pytest.raises(ValueError):
+        stats.paired_bootstrap(a, b)
+
+
+def test_paired_bootstrap_rejects_invalid_options(stats):
+    with pytest.raises(ValueError):
+        stats.paired_bootstrap([1, 0], [0, 1], n_resamples=0)
+    with pytest.raises(ValueError):
+        stats.paired_bootstrap([1, 0], [0, 1], confidence=1.0)
